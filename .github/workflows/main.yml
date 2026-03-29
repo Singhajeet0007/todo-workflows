@@ -1,6 +1,6 @@
- name: Test and Build
+name: Test and Build
 
- on:
+on:
   push:
     branches:
       - main
@@ -8,20 +8,24 @@
     branches:
       - main
 
-  jobs:
-    lint:
+jobs:
+  lint-and-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
+
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: '24'
+          cache: npm
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: Run Lint
-        run: npm run lint 
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
