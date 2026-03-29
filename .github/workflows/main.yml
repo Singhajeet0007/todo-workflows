@@ -8,8 +8,8 @@
     branches:
       - main
 
-jobs:
-  lint-and-typecheck:
+  jobs:
+    lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
