@@ -31,6 +31,7 @@ jobs:
         run: npm run build
 
   deploy-to-aws:
+    needs: lint-and-build
     name: Deploy to AWS
     runs-on: ubuntu-latest
     steps:
