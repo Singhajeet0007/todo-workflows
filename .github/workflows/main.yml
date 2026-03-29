@@ -49,6 +49,6 @@ jobs:
         run: npm run build
       
       - name: Deploy
-        echo "Deploying to AWS" 
+        echo: "Deploying to AWS" 
 
-        
+
